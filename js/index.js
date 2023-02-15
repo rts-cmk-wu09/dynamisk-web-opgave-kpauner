@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let servicesSection = document.querySelector('.services');
     let facilitiesSection = document.querySelector('.facilities');
     let sitesSection = document.querySelector('.sites')
+    let advantagesSection = document.querySelector('.advantages')
 
     // slå dig løs her... 
     
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <p>${service.text}</p>
         <a href="#">${service.linktext}</a>
         `;
-        
+
         serviceslist.classList.add('card', 'just-center');
         servicesSection.append(serviceslist);      
     });
@@ -61,7 +62,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let sitesHeader = document.createElement('div')
     sitesHeader.innerHTML = `
         <h2>${sites.headline}</h2>
-        Postnummer: ${sites.headline}
+        <p>${sites.text}</p>
+        <button><img src="${sites.btnicon}">Explore</button>
     `;
 
     let sitesList = document.createElement('ul')
@@ -77,6 +79,26 @@ document.addEventListener("DOMContentLoaded", function() {
     sitesSection.append(sitesHeader);
     sitesSection.append(sitesList);
 
+    // ADVANTAGES
+
+    let advantagesHeader = document.createElement('h2')
+    advantagesHeader.classList.add('section-header');
+    advantagesHeader.innerHTML = `Our Advantages`;
+    advantagesSection.appendChild(advantagesHeader);
+
+    advantages.forEach((advantage) => {
+        let advantagelist = document.createElement('article');
+        advantagelist.innerHTML += `
+            <img src="${advantage.icon}">
+            <h3>${advantage.headline}</h3>
+            <p>${advantage.text}</p>
+            <a href="${advantage.link}">Show me more</a>           
+
+        `;
+        advantagelist.classList.add('card');
+        advantagesSection.append(advantagelist);
+
+    });
 
     // FOOTER
  

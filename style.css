@@ -10,6 +10,20 @@
 
 button {
     border: transparent;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-brand-primary);
+    padding: 0.7rem 5rem;
+    width: 8rem;
+}
+
+button img {
+    height: 16px;
+    margin: 0 0.4rem 0 0;
 }
 
 a {
@@ -64,34 +78,19 @@ p {
     padding: 3rem 5rem 3rem 3rem;
 }
 
-.herobox button {
-    font-weight: 700;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-brand-primary);
-    padding: 0.3rem;
-    width: 8rem;
-}
-
-.herobox button img {
-    height: 16px;
-    margin: 0.3rem;
-}
-
 section {
-    margin: 0 auto 3rem auto;
+    padding: 0 2rem;
+    margin: 0 auto 12rem auto;
 }
 
-.services, .facilities {
+.services, .facilities, .advantages {
     display: flex;
     flex-wrap: wrap;
     gap: 1.4rem;
     max-width: 1200px;
 }
 
-.facilities img {
+.facilities img, .advantages img {
     width:32px;
     margin: 2rem 0;
 }
@@ -101,7 +100,8 @@ section {
 }
 
 .services .card img {
-    width: 60%;
+    height: 180px;
+    width: 230px;
     margin: 0 0 2rem 0;
 }
 
@@ -109,6 +109,10 @@ section {
     display: flex;
     flex-direction: column;
     flex: 1;
+}
+
+.card a {
+    margin-top:auto;
 }
 
 .farver {
@@ -121,11 +125,19 @@ section {
 
 .sites ul {
     display: flex;
+    gap: 2rem;
+}
+
+.sites div {
+    width: 40%;
+    padding: 0 10rem 0 0;
 }
 
 .sites ul li img {
     width: 100%;
-    height: auto;
+    margin-bottom:1rem ;
+    height: 350px;
+    object-fit: cover;
 }
 
 /* -------- UTILITY --------*/
