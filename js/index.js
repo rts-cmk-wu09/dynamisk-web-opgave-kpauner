@@ -105,13 +105,11 @@ document.addEventListener("DOMContentLoaded", function() {
     let footerSection = document.createElement('footer');
     body.append(footerSection);
 
-    footerContainer = document.createElement('div');
+    let footerContainer = document.createElement('div');
     footerSection.append(footerContainer);
     footerContainer.classList.add('footer-container');
-    let footerContainerSection = document.querySelector('.footer-container');
 
-
-    let footerHeader = document.createElement('div')
+    let footerHeader = document.createElement('div');
     footerHeader.classList.add('footer-header');
     footerHeader.innerHTML = `
         <h3>${footer.text}</h3>       
@@ -132,8 +130,28 @@ document.addEventListener("DOMContentLoaded", function() {
         `;
     }).join('');
 
-    footerContainerSection.append(footerHeader);
-    footerContainerSection.append(footerNav);
+    footerContainer.append(footerHeader);
+    footerContainer.append(footerNav);
+
+    // COPYRIGHT
+ 
+    let copyrightSection = document.createElement('div');   
+    copyrightSection.classList.add('copyright');
+
+    let smallText = document.createElement('small');
+    smallText.innerHTML = `${copyright.small}`;
+    
+    let copyrightNav = document.createElement('ul')
+    copyright.links.forEach((link) => {
+        copyrightNav.innerHTML += `
+        <li><a href="#">${link}</a></li>
+        `;
+    })
+    copyrightNav.classList.add('copyright-nav');    
+
+    footerSection.append(copyrightSection);
+    copyrightSection.append(smallText)
+    copyrightSection.append(copyrightNav)
 
     console.log(footer);
 

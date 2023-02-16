@@ -115,7 +115,7 @@ let footer = {
     ]    
 }
 
-let small = {
+let copyright = {
     small: "EazyCamper. All rights reserved.",
-    links: ["hej", "hej", "hej", "hej"]    
+    links: ["About", "Site Map", "Terms", "Privacy Policy", "Teams"]    
 }
