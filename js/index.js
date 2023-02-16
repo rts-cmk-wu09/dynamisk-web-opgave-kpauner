@@ -102,11 +102,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // FOOTER
  
-    let footer = document.createElement('footer');
-    body.append(footer);
+    let footerSection = document.createElement('footer');
+    body.append(footerSection);
+
+    footerContainer = document.createElement('div');
+    footerSection.append(footerContainer);
+    footerContainer.classList.add('footer-container');
+    let footerContainerSection = document.querySelector('.footer-container');
+
+
+    let footerHeader = document.createElement('div')
+    footerHeader.classList.add('footer-header');
+    footerHeader.innerHTML = `
+        <h3>${footer.text}</h3>       
+        <h2 class="large">${footer.headline}</h2>
+    `;
+
+    let footerNav = document.createElement('div');
+    footerNav.classList.add('footer-nav');
+    footerNav.innerHTML = footer.links.map((link) => {
+        let sublinksHtml = link.sublinks.map((sublink) => `<li><a href="#">${sublink}</a></li>`).join('');
+        return `
+            <div class="footer-menu">
+                <h4>${link.linkheader}</h4>
+                <ul>
+                    ${sublinksHtml}
+                </ul>
+            </div>
+        `;
+    }).join('');
+
+    footerContainerSection.append(footerHeader);
+    footerContainerSection.append(footerNav);
+
     console.log(footer);
-
-    console.log(sitesSection);
-
 
 }) // DOMContentLoaded slut
